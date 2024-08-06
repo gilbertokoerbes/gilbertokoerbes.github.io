@@ -1,10 +1,12 @@
-# $_ Gilberto Luis Koerbes Junior 
+# $\_ Gilberto Luis Koerbes Junior
 
 ```bash
 #!/bin/bash
 echo 'Welcome!'
 ```
-### About me 💭: 
+
+### About me 💭:
+
 <p>
 Se você chegou até aqui, vou me apresentar de uma forma mais descontraída ;).
 <p>
@@ -15,14 +17,24 @@ Busco continuamente conhecimentos de Engenharia de Software, Escalabilidade e Ar
 <p>
 
 ```
- ____              ___                          
-|  _ \  _____   __/ _ \ _ __  ___             _<_    __>_  
-| | | |/ _ \ \ / / | | | '_ \/ __|           / _ \ / / _ \ 
+ ____              ___
+|  _ \  _____   __/ _ \ _ __  ___             _<_    __>_
+| | | |/ _ \ \ / / | | | '_ \/ __|           / _ \ / / _ \
 | |_| |  __/\ V /| |_| | |_) \__ \          v (_) /^/ (_) v
-|____/ \___| \_/  \___/| .__/|___/           \_>_/_/ \_<_/ 
-                       |_|                                 
+|____/ \___| \_/  \___/| .__/|___/           \_>_/_/ \_<_/
+                       |_|
 
 ```
 
-
-
+```mermaid
+    gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
