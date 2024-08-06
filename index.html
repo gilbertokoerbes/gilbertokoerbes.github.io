@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown with Mermaid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="markdown-body">
+        <textarea id="markdown-content" style="display:none;">
+        # Example Markdown
+
+        ```mermaid
+        graph TD;
+          A-->B;
+          A-->C;
+          B-->D;
+          C-->D;
+        ```
+
+        ```python
+        def hello_world():
+            print("Hello, world!")
+        ```
+        </textarea>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.10/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.1/mermaid.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const markdownContent = document.getElementById('markdown-content').value;
+            const htmlContent = marked(markdownContent);
+            document.querySelector('.markdown-body').innerHTML = htmlContent;
+            mermaid.initialize({ startOnLoad: true });
+        });
+    </script>
+</body>
+</html>
+
