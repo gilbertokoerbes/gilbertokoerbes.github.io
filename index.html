@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown with Mermaid</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -15,6 +17,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="markdown-body">
         <textarea id="markdown-content" style="display:none;">
@@ -35,16 +38,17 @@
         </textarea>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.10/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.1/mermaid.min.js"></script>
+    <!-- Importando bibliotecas JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.4/mermaid.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const markdownContent = document.getElementById('markdown-content').value;
-            const htmlContent = marked(markdownContent);
+            const htmlContent = marked.parse(markdownContent);
             document.querySelector('.markdown-body').innerHTML = htmlContent;
             mermaid.initialize({ startOnLoad: true });
         });
     </script>
 </body>
-</html>
 
+</html>
