@@ -45,8 +45,9 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             const markdownContent = document.getElementById('markdown-content').value;
             const htmlContent = marked.parse(markdownContent);
-            document.querySelector('.markdown-body').innerHTML = htmlContent;
+            document.getElementById('content').innerHTML = htmlContent;
             mermaid.initialize({ startOnLoad: true });
+            mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
         });
     </script>
 </body>
