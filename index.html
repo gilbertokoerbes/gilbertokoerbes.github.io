@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown with Mermaid</title>
+    <script type="module">
+        import darkreader from 'https://cdn.jsdelivr.net/npm/darkreader@4.9.87/+esm'
+    </script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
     <style>
@@ -15,14 +18,35 @@
             margin: 0 auto;
             padding: 45px;
         }
-
-        :root {
-            color-scheme: dark;
-        }
     </style>
 </head>
 
 <body>
+    <script type="module">
+        import {
+            enable as enableDarkMode,
+            disable as disableDarkMode,
+            auto as followSystemColorScheme,
+            exportGeneratedCSS as collectCSS,
+            isEnabled as isDarkReaderEnabled
+        } from 'https://cdn.jsdelivr.net/npm/darkreader@4.9.87/+esm';
+
+        enableDarkMode({
+            brightness: 100,
+            contrast: 90,
+            sepia: 10,
+        });
+
+        disableDarkMode();
+
+        followSystemColorScheme();
+
+        const CSS = await collectCSS();
+
+        const isEnabled = isDarkReaderEnabled();
+        console.log(isEnabled)
+    </script>
+
 
     <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
@@ -49,6 +73,7 @@
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     </script>
+
 </body>
 
 </html>
