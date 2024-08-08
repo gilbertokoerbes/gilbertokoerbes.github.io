@@ -35,15 +35,69 @@
 
     <pre class="mermaid">
         flowchart LR
-        id1{{This is the text in the box}} 
-        id2{{This is the text in the box}}
-        id3{{This is the text in the box}}
-        id4{{This is the text in the box}}
-        id5{{This is the text in the box}}
-        id6{{This is the text in the box}}
-        id7{{This is the text in the box}}
-        id8{{This is the text in the box}}
-        id1 --> id2 --> id3 --> id4 --> id5 --> id6 --> id7 --> id8
+        %%1º%%
+        95303{{"MATEMÁTICA \n DISCRETA (10,0)"}} 
+        98707{{"METODOLOGIA \n CIENTÍFICA (8,2)"}}
+        4611C{{"FUNDAMENTOS DE \nPROGRAMAÇÃO (10,0)"}}
+        1501A{{"ÉTICA E CIDADANIA (8,0)"}}
+        98705{{"INTRODUÇÃO À \nCOMPUTAÇÃO (10,0)"}}
+        
+        %%2º%%
+        4611E{{"LÓGICA PARA \nCOMPUTAÇÃO (7,8)"}} 
+        4611F{{"PROGRAMAÇÃO \n ORIENTADA A OBJETOS \n(10,0)"}}
+        4645G{{"ALGORITMOS E \nESTRUTURAS DE DADOS I\n (8,1)"}}
+        4645Y{{"FUNDAMENTOS DE \n BANCO DE DADOS (9,1)"}}
+        4646B{{"FUNDAMENTOS DE \nSISTEMAS DIGITAIS\n (7,7)"}}
+        46515{{"LINGUAGENS, AUTÔMATOS \nE COMPUTAÇÃO (9,6)"}}
+        95300{{"CÁLCULO I (8,2)"}}
+
+        %%3º%%
+        98702{{"PRÁTICA EM PESQUISA(8,2)"}}
+        4636H{{"FUNDAMENTOS de \n DESENVOLVIMENTO DE\n SOFTWARE(8,5)"}}
+        4645H{{"ALGORITMOS E \n ESTRUTURAS DE DADOS \nII (8,7)"}}
+        4646Q{{"ORGANIZAÇÃO E ARQUITETURA \n DE COMPUTARES (8,1)"}}
+        4646T{{"PROGRAMAÇÃO DE \n BAIXO NÍVEL (7,0)"}}
+        4646U{{"PROGRAMAÇÃO \nFUNCIONAL (9,7)"}}
+        98902{{"BANCO DE DADOS \nII (9,2)"}}
+
+
+        %%4º%%
+        4645Z{{"FUNDAMENTOS DE \n COMPUTAÇÃO GRÁFICA \n (7,2)"}}
+        4646Z{{"PROJETO E \nOTIMIZAÇÃO DE \nALGORITMOS (8,2)"}}
+        95301{{"CÁLCULO II (8,7)"}}
+        95302{{"ÁLGEBRA LINEAR E\n GEOMETRIA ANALÍTICA \n (7,2)"}}
+        98713{{"FUNDAMENTOS DE \nPROCESSAMENTO PARALELO \n E DISTRIBUÍDO (9,5) "}}
+        987d13{{"ENGENHARIA DE SOFTWARE I (9,8)"}}
+        987d13{{"t_t"}}
+        987d13{{"t_t"}}
+
+        
+        
+        95303 --> 4611E & 95300
+                                                        95300 --->  95301 & 95302
+        98707 --> 1501A             --> 98702
+
+        4611C --> 4611F & 46515 & 4645G
+                                    4611F --> 4636H
+                                    4645G --> 4645H
+                                    46515 --> 4646U
+                                                        4645H --> 4646Z
+                                                        4645H --> 98713
+        98705 --> 4646B & 4645Y
+                            4646B --> 4646Q
+                            4646B --> 4646T
+                                    4645Y --> 98902
+                                                        4646T --> 4645Z
+                                                        
+        1º      --> 2º              --> 3º                    --> 4º
+
+        
+
+
+        
+        
+
+
           </pre>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
