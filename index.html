@@ -112,21 +112,28 @@
             isEnabled as isDarkReaderEnabled
         } from 'https://cdn.jsdelivr.net/npm/darkreader@4.9.87/+esm';
 
-        enableDarkMode({
-            brightness: 100,
-            contrast: 90,
-            sepia: 10,
+        // Function to apply dark mode
+        async function applyDarkMode() {
+            enableDarkMode({
+                brightness: 100,
+                contrast: 90,
+                sepia: 10,
+            });
+
+            // Wait for CSS to be collected
+            const CSS = await collectCSS();
+            console.log(CSS);
+
+            // Check if dark mode is enabled
+            const isEnabled = isDarkReaderEnabled();
+            console.log('Is dark mode enabled:', isEnabled);
+        }
+
+        // Use the window's load event to ensure all resources are loaded
+        window.addEventListener('load', function () {
+            applyDarkMode();
         });
 
-        disableDarkMode();
-
-        followSystemColorScheme();
-
-        const CSS = await collectCSS();
-        window.onload = function () {
-            const isEnabled = isDarkReaderEnabled();
-            console.log(isEnabled)
-        };
     </script>
 </body>
 
