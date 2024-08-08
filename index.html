@@ -123,11 +123,11 @@
         followSystemColorScheme();
 
         const CSS = await collectCSS();
-
-        const isEnabled = isDarkReaderEnabled();
-        console.log(isEnabled)
+        window.onload = function () {
+            const isEnabled = isDarkReaderEnabled();
+            console.log(isEnabled)
+        };
     </script>
-
 </body>
 
 </html>
