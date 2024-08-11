@@ -41,12 +41,15 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('pre-block-container-mermaid').innerHTML = data;
-                console.log("READ" + data[0])
             })
             .catch(error => console.error('Error loading the pre block:', error));
     </script>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            securityLevel: 'loose',
+            theme: 'neutral',
+        });
     </script>
 
     <script type="module">
