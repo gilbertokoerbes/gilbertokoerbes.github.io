@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Arrastável em Tela Cheia</title>
+    <style>
+        /* Garante que o body e html ocupem 100% da tela */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            /* Remove a barra de rolagem da janela */
+        }
+
+        /* Estilo do container em tela cheia */
+        #container {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            /* Esconde o conteúdo que ultrapassa o container */
+            position: relative;
+        }
+
+        /* Estilo do conteúdo que será arrastado */
+        #draggable-content {
+            width: 200%;
+            /* Largura e altura maiores que o container */
+            height: 200%;
+            background: linear-gradient(45deg, #f06, #4a90e2);
+            cursor: grab;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="draggable-content">
+            <!-- Conteúdo aqui -->
+        </div>
+    </div>
+
+    <script>
+        // Seleciona os elementos
+        const container = document.getElementById('container');
+        const draggableContent = document.getElementById('draggable-content');
+
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        // Evento ao clicar e segurar o mouse
+        draggableContent.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - container.offsetLeft;
+            startY = e.pageY - container.offsetTop;
+            scrollLeft = container.scrollLeft;
+            scrollTop = container.scrollTop;
+            draggableContent.style.cursor = 'grabbing';
+        });
+
+        // Evento ao arrastar o mouse
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * 2; // *2 para aumentar a sensibilidade
+            const walkY = (y - startY) * 2; // *2 para aumentar a sensibilidade
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+
+        // Evento ao soltar o mouse
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            draggableContent.style.cursor = 'grab';
+        });
+    </script>
+</body>
+
+</html>

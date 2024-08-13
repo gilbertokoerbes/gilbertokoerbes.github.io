@@ -28,13 +28,30 @@
 
     <!-- Load the element definition -->
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <div style="width:70%; height:100%; position:relative; left:15%;top:0;">
+        <!-- Simply set the `src` attribute to your MD file and win -->
+        <zero-md src="README.md"></zero-md>
 
-    <!-- Simply set the `src` attribute to your MD file and win -->
-    <zero-md src="README.md"></zero-md>
+        <div id="pre-block-container-gitgraph">
+            <!-- The content from the external file will be inserted here -->
+        </div>
+        <h1>CS</h1>
+    </div>
 
-    <div id="pre-block-container-mermaid">
+
+
+    <div id="pre-block-container-mermaid" style="width: 100%; position:relative;">
         <!-- The content from the external file will be inserted here -->
     </div>
+    <script>
+        // Load the content from the separate file and insert it into the div
+        fetch('./gitgraph.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('pre-block-container-gitgraph').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the pre block:', error));
+    </script>
     <script>
         // Load the content from the separate file and insert it into the div
         fetch('./mermaid.html')
@@ -46,10 +63,14 @@
     </script>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({
-            securityLevel: 'loose',
-            theme: 'neutral',
-        });
+        let config = {
+            startOnLoad: true,
+            flowchart: {
+                htmlLabels: true,
+            },
+            theme: 'base',
+        };
+        mermaid.initialize(config);
     </script>
 
     <script type="module">
@@ -80,7 +101,7 @@
 
         // Use the window's load event to ensure all resources are loaded
         window.addEventListener('load', function () {
-            applyDarkMode();
+            setTimeout(() => applyDarkMode(), 5000);
         });
 
     </script>
