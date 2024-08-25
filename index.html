@@ -32,10 +32,10 @@
         <!-- Simply set the `src` attribute to your MD file and win -->
         <zero-md src="README.md"></zero-md>
 
-        <div id="pre-block-container-gitgraph">
-            <!-- The content from the external file will be inserted here -->
-        </div>
-        <h1>CS</h1>
+        <!-- <div id="pre-block-container-gitgraph">
+        
+        </div> 
+        -->
     </div>
 
 
@@ -67,8 +67,9 @@
             startOnLoad: true,
             flowchart: {
                 htmlLabels: true,
+                height: "150%"
             },
-            theme: 'base',
+
         };
         mermaid.initialize(config);
     </script>
@@ -101,7 +102,7 @@
 
         // Use the window's load event to ensure all resources are loaded
         window.addEventListener('load', function () {
-            setTimeout(() => applyDarkMode(), 5000);
+            applyDarkMode()
         });
 
     </script>

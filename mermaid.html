@@ -1,6 +1,18 @@
 <pre class="mermaid">
-    %%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
+flowchart LR
+    7{{" >= 7 && <= 7,4"}}:::sev_sev_half --> 8{{">= 7,5 && <= 8,4"}}:::sev_eight --> 9{{">= 8,5 && <= 9,4"}}:::eight_nine --> 10{{">= 9,5 && <= 10"}}:::greater_than_nine_half
+    classDef greater_than_nine_half color:#E6FF94,fill:transparent,stroke:#E6FF94,stroke-width:4px;
+    classDef eight_nine color:#E6FF94,fill:transparent,stroke:#FFF,stroke-width:7px;
+    classDef sev_eight color:#D6EFD8,fill:transparent,stroke:#D6EFD8,stroke-width:5px;
+    classDef sev_sev_half color:#6F6F6F,fill:transparent,stroke:#AF8F6F,stroke-width:1px;    
+</pre>
 
+<pre class="mermaid">
+
+    %%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
+    
+
+    
     flowchart LR
         %%1º%%
         95303{{"MATEMÁTICA \n DISCRETA (10,0)"}}:::greater_than_nine_half
@@ -115,7 +127,7 @@
                                                                                                                                                                     4645Z -----> 4646X
                                                                                                                                         4646T -----> 4645K
                                                         
-        1º      --> 2º              --> 3º                    --> 4º                    --> 5º                   --> 6º                      --> 7º                     --> 8º              --> 9(9º)
+    
 
         
 
@@ -126,8 +138,4 @@
     classDef eight_nine color:#E6FF94,fill:transparent,stroke:#FFF,stroke-width:7px;
     classDef sev_eight color:#D6EFD8,fill:transparent,stroke:#D6EFD8,stroke-width:5px;
     classDef sev_sev_half color:#6F6F6F,fill:transparent,stroke:#AF8F6F,stroke-width:1px;    
- 
-
-
-
 </pre>
