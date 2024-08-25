@@ -75,6 +75,6 @@ Não fui o 'Aluno CDF Top 1', mas acredito que dentro da minha realidade (trabal
 
 Montei este diagrama abaixo em **_Mermaid_** como mais um dos meus "passatempos" com as disciplinas que vi e dos resultados. Não necessariamente está na ordem e correlação entre as disciplinas (mas próximo --- [98AJ](https://portal.pucrs.br/wp-content/uploads/2024/04/2024_04_04-ciencia_da_computacao_grade_98AJ.pdf)). Em [meu GitHub](https://github.com/gilbertokoerbes?tab=repositories) tenho alguns dos projetos de cada disciplina, não organizados como gostaria, mas um registro do que foi feito.
 
-Com isso, durante a criação deste criação, me fez lembrar de cada disciplina, de cada conteúdo, de cada trabalho e de cada professor.
+Com isso, durante a criação deste site e digrama, me fez lembrar de cada disciplina, de cada conteúdo, de cada trabalho e de cada professor.
 
 [comment]: <> (a reference mermaid link.)
