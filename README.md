@@ -5,6 +5,8 @@
 echo 'Welcome!'
 ```
 
+💻 **Sugiro que abra esta página em navegador de computador para carregar alguns componentes.**
+
 <font color="#FF311F"> 
 <h2>
 .
